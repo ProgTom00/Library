@@ -30,17 +30,17 @@ The application contains programmed services:
 * /createUser(POST) - creates user accepts input as JSON format with values 'firstname', 'lastname', 'userDateCreateAccount'(YYYY-MM-DD),
 * /createBook(POST) - creates book accepts input as JSON format with values 'title', 'author', 'releaseDate'
 * /getBookById(GET) - returns list of specific book(query param 'bookId'),
-* /deleteBook - deletes book from the list by id (query param 'bookId'),
-* /updateBook - updates book accepts input as JSON format with (body 'book' object),
-* /getBooks - returns list of all books,
-* /createCopyBook - creates copy book row, accepts input as JSON format with values('status', 'book' object)
-* /updateCopyBook - updates copy book accepts input as JSON format with(body 'copy' object)
-* /deleteCopy - deletes copy book from the list by id (query param 'bookCopyId')
-* /getCopy - returns list of specific copy book (query param 'bookCopyId)
-* /getCopyByTitle - return list of book copies with status 'AVAILABLE'
-* /deleteRental - deletes rental from the list by id (query param 'rentalId'),
-* /getRental - returns rental object (query param 'rentalId')
-* /rentedBook - creates row in table accepts input ('userId', bookCopyId, rentUntil)
+* /deleteBook(DELETE) - deletes book from the list by id (query param 'bookId'),
+* /updateBook(PUT) - updates book accepts input as JSON format with (body 'book' object),
+* /getBooks(GET) - returns list of all books,
+* /createCopyBook(POST) - creates copy book row, accepts input as JSON format with values('status', 'book' object)
+* /updateCopyBook(PUT) - updates copy book accepts input as JSON format with(body 'copy' object)
+* /deleteCopy(DELETE) - deletes copy book from the list by id (query param 'bookCopyId')
+* /getCopy(GET) - returns list of specific copy book (query param 'bookCopyId)
+* /getCopyByTitle(GET) - return list of book copies with status 'AVAILABLE'
+* /deleteRental(DELETE) - deletes rental from the list by id (query param 'rentalId'),
+* /getRental(GET) - returns rental object (query param 'rentalId')
+* /rentedBook(POST) - creates row in table accepts input ('userId', bookCopyId, rentUntil)
 
 ## Tests
 
