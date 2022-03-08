@@ -1,6 +1,5 @@
 package com.crud.library.service;
 
-import com.crud.library.domain.Status;
 import com.crud.library.domain.book.Book;
 import com.crud.library.domain.book.BookDto;
 import com.crud.library.domain.book.BookNotFoundException;
@@ -72,7 +71,5 @@ public class CopyDbService {
             return copyMapper.mapToBookCopyDtoList(list, bookDto);
         }
     }
-    public void setStatus(Status status) {
 
-    }
 }

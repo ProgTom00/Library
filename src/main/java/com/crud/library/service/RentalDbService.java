@@ -76,7 +76,6 @@ public class RentalDbService {
                     userMapper.mapToUser(userDto), LocalDate.now(), date);
             saveRental(rental);
             copyDbService.updateCopyBook(copyDto);
-            copyDbService.setStatus(Status.RENTED);
         }
     }
 }
