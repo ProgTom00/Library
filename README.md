@@ -8,7 +8,7 @@
 
 ## General info
 
-I present yo ou a REST API which acts as library system.
+I present to you a REST API which acts as a library system. 
 
 ## Entities
 

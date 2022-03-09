@@ -38,13 +38,13 @@ public class Rental {
     }
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "USER_ID_BORROWER")
+    @JoinColumn(name = "USER_ID")
     public User getUser() {
         return user;
     }
 
     @OneToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "RENTED_BOOK_ID")
+    @JoinColumn(name = "COPY_ID")
     public Copy getCopy() {
         return copy;
     }

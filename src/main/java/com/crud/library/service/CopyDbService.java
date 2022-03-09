@@ -13,7 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -44,9 +43,6 @@ public class CopyDbService {
     }
 
     public CopyDto updateCopyBook(CopyDto copyDto) throws CopyNotFoundException, BookNotFoundException {
-        Optional<Copy> copy1 = copyRepository.findById(copyDto.getBookCopyId());
-        copy1.orElseThrow(CopyNotFoundException::new).setStatus(copyDto.getStatus());
-        copyRepository.save(copy1.orElseThrow(CopyNotFoundException::new));
         Copy copy2 = copyRepository.findById(copyDto.getBookCopyId()).orElseThrow(CopyNotFoundException::new);
         copy2.setStatus(copyDto.getStatus());
         BookDto bookDto = bookDbService.findBookByIdLong(copy2.getBook().getBookId());

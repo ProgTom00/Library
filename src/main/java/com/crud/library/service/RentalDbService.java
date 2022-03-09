@@ -1,7 +1,6 @@
 package com.crud.library.service;
 
 
-import com.crud.library.domain.Status;
 import com.crud.library.domain.book.Book;
 import com.crud.library.domain.book.BookNotFoundException;
 import com.crud.library.domain.copy.CopyDto;
@@ -17,7 +16,6 @@ import com.crud.library.mapper.UserMapper;
 import com.crud.library.repository.RentalRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -29,10 +27,8 @@ public class RentalDbService {
 
     @Autowired
     private final RentalRepository rentalRepository;
-    @Lazy
     @Autowired
     private final UserDbService userDbService;
-    @Lazy
     @Autowired
     private final CopyDbService copyDbService;
     @Autowired
@@ -41,7 +37,6 @@ public class RentalDbService {
     private final UserMapper userMapper;
     @Autowired
     private final CopyMapper copyMapper;
-    @Lazy
     @Autowired
     private final BookDbService bookDbService;
 
@@ -53,7 +48,6 @@ public class RentalDbService {
     public void deleteRentalBookCopy(Long id) throws CopyNotFoundException, RentalNotFoundException, BookNotFoundException, UserNotFoundException {
         RentalDto rentalDto = getRentalCopyBook(id);
         copyDbService.updateCopyBook(rentalDto.getCopyDto());
-        copyDbService.setStatus(Status.AVAILABLE);
         rentalRepository.deleteById(id);
     }
 
